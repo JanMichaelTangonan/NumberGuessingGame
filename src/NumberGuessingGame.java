@@ -25,7 +25,7 @@ public class NumberGuessingGame {
         }
         if (pickedNumber==number){
 
-        System.out.println("You have gotten the random number, congratulations :D!");
+            System.out.println("You have gotten the random number, congratulations :D!");
 
         }
     }
