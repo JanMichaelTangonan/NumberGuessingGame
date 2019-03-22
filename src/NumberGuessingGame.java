@@ -15,41 +15,55 @@ public class NumberGuessingGame {
 
         System.out.println(pickedNumber);
 
-        boolean repeatGame= true;
+        int numberOfTries = 0;
+        numberOfTries++;
+        boolean wingame= false;
+        int repeat = 0;
+        repeat++;
+        boolean continueGame =true;
 
-        while (repeatGame){
+
+        while (wingame==false){
 
             //Results indicators (detects if the game needs repeating or not)
+            if (pickedNumber == number) {
+
+                System.out.println("Congratulations you have finally guessed the random number!");
+                break;
+            }
+
+
+        }
+        while(continueGame==true){
+
             if (pickedNumber > number) {
 
                 System.out.println("Your chosen number is lower than the random number that we have chosen.");
 
-            } else if (pickedNumber < number) {
+            }
+
+            else if (pickedNumber < number) {
 
                 System.out.println(("Your chosen number is higher than the random number that we have chosen."));
 
             }
-
-            if (pickedNumber == number) {
-
-                System.out.println("You must have eaten lucky charms or something...");
-                break;
-            }
-
-        }
-
-        //Counting how many tries are allowed (DO NOT WORK ON JUST YET)
-        for(int tries = 0;tries<30;){
-
-        System.out.println("You have guessed too much, guess your just unlucky :(");
         }
 
 
 
+        //Counting how many tries are allowed (Might be done.[not sure])
+        if (wingame==true){
+            System.out.println("It took you " + numberOfTries + " guess to get the number correctly.");
 
-
+        }
     }
+
+
+
+
+
 }
+
 
 
 
