@@ -7,38 +7,28 @@ public class NumberGuessingGame {
         System.out.println("Give me a random number from 0 to 100.");
 
         Scanner chosenNumber = new Scanner(System.in);
-        int number = chosenNumber.nextInt();
+
 
         int pickedNumber;
 
+        int number;
         pickedNumber = (int) (Math.random() * 100);
 
         System.out.println(pickedNumber);
 
-        int numberOfTries = 0;
-        numberOfTries++;
-        boolean wingame= false;
-        int repeat = 0;
-        boolean continueGame =true;
-
 
         //Results indicators (detects if the game needs repeating or not)
-        while (wingame==false){
-
+        do{
+            number = chosenNumber.nextInt();
 
             if (pickedNumber == number) {
                 System.out.println("Congratulations you have finally guessed the random number!");
-                }break;
-
-        }
+                }
 
 
-        while(continueGame==true){
-
-            if (pickedNumber > number) {
+            else if(pickedNumber > number) {
 
                 System.out.println("Your chosen number is lower than the random number that we have chosen, guess again!");
-                
             }
 
             else if (pickedNumber < number) {
@@ -46,15 +36,16 @@ public class NumberGuessingGame {
                 System.out.println(("Your chosen number is higher than the random number that we have chosen, guess again!"));
 
             }
-        }
+        }while(pickedNumber!=number);
 
 
 
-        //Counting how many tries are allowed (Need to fix number of tries.)
+
+        /*Counting how many tries are allowed (Need to fix number of tries.)
         if (wingame==true){
             System.out.println("It took you " + numberOfTries + " guess to get the number correctly.");
 
-        }
+        }*/
     }
 
 
