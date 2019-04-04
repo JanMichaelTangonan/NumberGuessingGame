@@ -11,44 +11,50 @@ public class NumberGuessingGame {
 
         int pickedNumber;
 
-        int number;
+        int userValue;
+
+        int numberOfTries = 0;
+
         pickedNumber = (int) (Math.random() * 100);
 
-        System.out.println(pickedNumber);
 
 
         //Results indicators (detects if the game needs repeating or not)
         do{
-            number = chosenNumber.nextInt();
+            userValue = chosenNumber.nextInt();
+            numberOfTries++;
 
-            if (pickedNumber == number) {
+            if (pickedNumber == userValue) {
                 System.out.println("Congratulations you have finally guessed the random number!");
-                }
+            }
+
+            if (userValue==pickedNumber){
+
+                System.out.println(pickedNumber);
+            }
 
 
-            else if(pickedNumber > number) {
+            else if(pickedNumber > userValue) {
 
                 System.out.println("Your chosen number is lower than the random number that we have chosen, guess again!");
             }
 
-            else if (pickedNumber < number) {
+            else if (pickedNumber < userValue) {
 
                 System.out.println(("Your chosen number is higher than the random number that we have chosen, guess again!"));
 
             }
-        }while(pickedNumber!=number);
+
+        }while(pickedNumber!=userValue);
 
 
 
+        //Final results
+        if (pickedNumber==userValue){
+            System.out.println("It took you " + numberOfTries + " guess(es) to get the number correctly.");
 
-        /*Counting how many tries are allowed (Need to fix number of tries.)
-        if (wingame==true){
-            System.out.println("It took you " + numberOfTries + " guess to get the number correctly.");
-
-        }*/
+        }
     }
-
-
 
 
 
